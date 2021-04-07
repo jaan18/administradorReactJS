@@ -21,18 +21,6 @@ MascotasCtrl.mostrarTodos = async (req, res) => {
   res.json(respuesta);
 };
 
-MascotasCtrl.listarid = async (req, res) => {
-  const id = req.params.id;
-  const respuesta = await Mascota.findById({ _id: id });
-  res.json(respuesta);
-};
-
-MascotasCtrl.mascotasAdmin = async (req, res) => {
-  const id = req.params.id;
-  const respuesta = await Mascota.find({ _id: id });
-  res.json(respuesta);
-};
-
 MascotasCtrl.eliminar = async (req, res) => {
   const id = req.params.id;
   await Mascota.findByIdAndRemove({ _id: id });
